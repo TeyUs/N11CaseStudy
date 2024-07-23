@@ -17,6 +17,7 @@ final class ProductsListViewController: UIViewController, StoryboardLoadable {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray4
+        title = "N11 Ürünler"
         
         productsCollectionView.dataSource = adapter
         productsCollectionView.delegate = adapter

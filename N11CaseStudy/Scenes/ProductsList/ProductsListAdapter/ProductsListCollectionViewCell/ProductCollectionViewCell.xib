@@ -35,11 +35,24 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKf-Ut-R3r" userLabel="RateStarView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZj-3m-SUC">
                                         <rect key="frame" x="0.0" y="229" width="184" height="15"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKf-Ut-R3r" userLabel="RateStarView" customClass="UserRateView" customModule="N11CaseStudy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="15"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="tJy-Au-QRz"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="tJy-Au-QRz"/>
+                                            <constraint firstItem="jKf-Ut-R3r" firstAttribute="top" secondItem="vZj-3m-SUC" secondAttribute="top" id="Z8o-rV-lzH"/>
+                                            <constraint firstAttribute="bottom" secondItem="jKf-Ut-R3r" secondAttribute="bottom" id="eQL-n8-hud"/>
+                                            <constraint firstItem="jKf-Ut-R3r" firstAttribute="width" secondItem="vZj-3m-SUC" secondAttribute="width" multiplier="0.65" id="owW-aj-TOS"/>
+                                            <constraint firstAttribute="width" secondItem="vZj-3m-SUC" secondAttribute="height" multiplier="184:15" id="rnL-yz-3WU"/>
+                                            <constraint firstItem="jKf-Ut-R3r" firstAttribute="leading" secondItem="vZj-3m-SUC" secondAttribute="leading" id="zJm-Y4-zy2"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-XL-bwe" userLabel="PriceView" customClass="DiscountView" customModule="N11CaseStudy" customModuleProvider="target">
@@ -53,6 +66,7 @@
                                 <color key="backgroundColor" red="0.97970348600000001" green="0.97958844899999997" blue="0.98295408490000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iJL-fk-F7K" secondAttribute="trailing" constant="3" id="C7W-gT-Pkf"/>
                             <constraint firstItem="iJL-fk-F7K" firstAttribute="leading" secondItem="wqF-3B-ibP" secondAttribute="leading" constant="3" id="OF4-rd-doL"/>
@@ -74,6 +88,7 @@
                 <outlet property="nameLabel" destination="X5X-qB-jxN" id="K8y-L7-SA5"/>
                 <outlet property="priceView" destination="Il1-XL-bwe" id="tXp-cM-ghN"/>
                 <outlet property="productImage" destination="aS1-Uu-uit" id="he5-CH-Gx9"/>
+                <outlet property="rateView" destination="jKf-Ut-R3r" id="HDp-xM-hGm"/>
             </connections>
             <point key="canvasLocation" x="189.31297709923663" y="115.49295774647888"/>
         </collectionViewCell>

@@ -23,7 +23,7 @@ class SponsoredListCollectionViewCell: UICollectionViewCell {
         collectionView.register(nib, forCellWithReuseIdentifier: "ProductsListSponsoredCollectionViewCell")
     }
     
-    func configure(adapter: SponsoredCollectionViewAdapter) {
+    func configure(adapter: SponsoredCollectionViewAdapter?) {
 //        self.adapter = adapter
         
         collectionView.dataSource = adapter

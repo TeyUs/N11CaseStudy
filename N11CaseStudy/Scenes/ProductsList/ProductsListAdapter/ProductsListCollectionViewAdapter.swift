@@ -8,13 +8,10 @@
 import UIKit
 
 final class ProductsListCollectionViewAdapter: NSObject {
-    private let presenter: ProductsListPresenterProtocol
+    private let presenter: ProductsListAdapterToPresenterProtocol
     
-    var sponsoredAdapter: SponsoredCollectionViewAdapter
-    
-    init(presenter: ProductsListPresenterProtocol, sponsoredAdapter: SponsoredCollectionViewAdapter) {
+    init(presenter: ProductsListAdapterToPresenterProtocol) {
         self.presenter = presenter
-        self.sponsoredAdapter = sponsoredAdapter
     }
 }
 
@@ -26,7 +23,7 @@ extension ProductsListCollectionViewAdapter: UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SponsoredListCollectionViewCell", for: indexPath) as! SponsoredListCollectionViewCell
-            cell.configure(adapter: sponsoredAdapter)
+            cell.configure(adapter: presenter.getSponsoredAdapter())
             return cell
         } else if let item = presenter.productListItem(at: indexPath){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
@@ -43,7 +40,7 @@ extension ProductsListCollectionViewAdapter: UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == 0 {
             return CGSize(width: collectionView.frame.size.width,
-                   height: collectionView.frame.size.height/5)
+                          height: collectionView.frame.size.height/3.75)
         }
         return CGSize(width: collectionView.frame.size.width / 2,
                height: 290.0)

@@ -48,6 +48,7 @@
 		F3A0B80D2C4EC2570071BD32 /* DiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B80C2C4EC2570071BD32 /* DiscountView.swift */; };
 		F3A0B80F2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B80E2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift */; };
 		F3A0B8112C4F93E20071BD32 /* ProductListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B8102C4F93E20071BD32 /* ProductListFormatter.swift */; };
+		F3A0B8132C4FB5220071BD32 /* UserRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B8122C4FB5220071BD32 /* UserRateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		F3A0B80C2C4EC2570071BD32 /* DiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountView.swift; sourceTree = "<group>"; };
 		F3A0B80E2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsoredCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		F3A0B8102C4F93E20071BD32 /* ProductListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListFormatter.swift; sourceTree = "<group>"; };
+		F3A0B8122C4FB5220071BD32 /* UserRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				F3A0B80C2C4EC2570071BD32 /* DiscountView.swift */,
+				F3A0B8122C4FB5220071BD32 /* UserRateView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				F3A0B7FA2C4E6D970071BD32 /* ProductDetailRouter.swift in Sources */,
 				F36DBEB92C4BE8E5002532A7 /* ProductsListCollectionViewAdapter.swift in Sources */,
 				F3A0B7E72C4D1E820071BD32 /* StoryboardLoadable.swift in Sources */,
+				F3A0B8132C4FB5220071BD32 /* UserRateView.swift in Sources */,
 				F3A0B7F82C4E6D890071BD32 /* ProductDetailContract.swift in Sources */,
 				F3A0B7F62C4E6D7F0071BD32 /* ProductDetailInteractor.swift in Sources */,
 				F3A0B7FE2C4E7EE00071BD32 /* String+Ext.swift in Sources */,

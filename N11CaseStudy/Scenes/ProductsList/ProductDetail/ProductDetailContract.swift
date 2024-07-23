@@ -10,10 +10,8 @@ import Foundation
 //presenter'da, view'ı yönetecek
 protocol ProductDetailViewProtocol: AnyObject {
     func setTitle(_ text: String?)
+    func setRateView(_ rate: Double)
     func setDescription(_ text: String?)
-//    func setPrice(_ text: String?)
-//    func setDiscountPrice(_ text: String?)
-//    func setDiscountRatio(_ text: String?)
     func setPrices(normal: Double, discounted: Double)
     func setSeller(_ text: String?)
 }

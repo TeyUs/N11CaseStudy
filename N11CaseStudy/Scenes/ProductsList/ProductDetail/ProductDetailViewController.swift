@@ -12,6 +12,7 @@ final class ProductDetailViewController: UIViewController, StoryboardLoadable {
 
     @IBOutlet weak var imageSliderCollectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var rateView: UserRateView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var sellerLabel: UILabel!
     @IBOutlet weak var priceView: DiscountView!
@@ -35,16 +36,16 @@ final class ProductDetailViewController: UIViewController, StoryboardLoadable {
 
 
 extension ProductDetailViewController: ProductDetailViewProtocol {
-    func setPrices(normal: Double, discounted: Double) {
-        DispatchQueue.main.async { [weak self] in
-            self?.priceView.configure(normal: normal, discounted: discounted, size: .large)
-        }
-    }
-    
     func setTitle(_ text: String?) {
         DispatchQueue.main.async { [weak self] in
             self?.imageSliderCollectionView.reloadData()
             self?.nameLabel.text = text
+        }
+    }
+    
+    func setRateView(_ rate: Double) {
+        DispatchQueue.main.async { [weak self] in
+            self?.rateView.configure(rate: rate, textSize: .large)
         }
     }
     
@@ -57,6 +58,12 @@ extension ProductDetailViewController: ProductDetailViewProtocol {
     func setSeller(_ text: String?) {
         DispatchQueue.main.async { [weak self] in
             self?.sellerLabel.text = text
+        }
+    }
+    
+    func setPrices(normal: Double, discounted: Double) {
+        DispatchQueue.main.async { [weak self] in
+            self?.priceView.configure(normal: normal, discounted: discounted, size: .large)
         }
     }
 }

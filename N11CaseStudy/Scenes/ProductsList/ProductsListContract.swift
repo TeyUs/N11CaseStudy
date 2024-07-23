@@ -15,12 +15,17 @@ protocol ProductsListViewProtocol: AnyObject {
 //view'daki ve adapter'deki presenter
 protocol ProductsListPresenterProtocol: AnyObject {
     func viewDidLoad()
+}
+
+protocol ProductsListAdapterToPresenterProtocol: AnyObject {
     var productListItemsCount: Int { get }
     func productListItem(at index: IndexPath) -> Product?
     func productListSelectedItem(at index: IndexPath)
-    func loadNextPage()
     func productListScrolled(at index: IndexPath)
-    
+    func getSponsoredAdapter() -> SponsoredCollectionViewAdapter?
+}
+
+protocol SponsoredListAdapterToPresenterProtocol: AnyObject {
     var sponsoredProductsItemsCount: Int { get }
     func sponsoredProductsItem(at index: IndexPath) -> Product?
     func sponsoredProductsSelectedItem(at index: IndexPath)
@@ -40,6 +45,7 @@ protocol ProductsListInteractorToPresenterProtocol: AnyObject {
 //presenter'da
 protocol ProductsListRouterProtocol: AnyObject {
     func navigateToDetail(_ id: Int)
+    func getSponsoredAdapter() -> SponsoredCollectionViewAdapter?
 }
 
 protocol ProductListFormatterProtocol: AnyObject {

@@ -8,9 +8,9 @@
 import UIKit
 
 final class SponsoredCollectionViewAdapter: NSObject {
-    private let presenter: ProductsListPresenterProtocol
+    private let presenter: SponsoredListAdapterToPresenterProtocol
     
-    init(presenter: ProductsListPresenterProtocol) {
+    init(presenter: SponsoredListAdapterToPresenterProtocol) {
         self.presenter = presenter
     }
 }

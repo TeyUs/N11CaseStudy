@@ -11,4 +11,12 @@ extension UIColor {
     var lightBlue: UIColor {
         return UIColor(named: "light_blue") ?? .blue
     }
+    
+    var headerPurple: UIColor {
+        return UIColor(named: "header_purple") ?? .blue
+    }
+    
+    var starYellow: UIColor {
+        return UIColor(named: "star_yellow") ?? .blue
+    }
 }

@@ -11,6 +11,7 @@ final class ProductsListRouter {
     
     // MARK: Properties
     weak var view: UIViewController?
+    var sponsoredAdapter: SponsoredCollectionViewAdapter?
     
     // MARK: Static methods
     static func setupModule() -> ProductsListViewController {
@@ -20,7 +21,7 @@ final class ProductsListRouter {
         let router = ProductsListRouter()
         let interactor = ProductsListInteractor()
         let sponsoredAdapter = SponsoredCollectionViewAdapter(presenter: presenter)
-        let adapter = ProductsListCollectionViewAdapter(presenter: presenter, sponsoredAdapter: sponsoredAdapter)
+        let adapter = ProductsListCollectionViewAdapter(presenter: presenter)
         
         viewController.adapter = adapter
         viewController.presenter = presenter
@@ -30,6 +31,7 @@ final class ProductsListRouter {
         presenter.interactor = interactor
         presenter.formatter = formatter
         
+        router.sponsoredAdapter = sponsoredAdapter
         router.view = viewController
         
         interactor.output = presenter
@@ -40,6 +42,10 @@ final class ProductsListRouter {
 }
 
 extension ProductsListRouter: ProductsListRouterProtocol {
+    func getSponsoredAdapter() -> SponsoredCollectionViewAdapter? {
+        sponsoredAdapter
+    }
+    
     func navigateToDetail(_ id: Int) {
         print(id)
         let viewController = ProductDetailRouter.setupModule(id: id)

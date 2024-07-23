@@ -23,7 +23,9 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
             interactor?.retriveProducts(page: nextPage)
         }
     }
-    
+}
+
+extension ProductsListPresenter: ProductsListAdapterToPresenterProtocol {
     var productListItemsCount: Int {
         (formatter?.getNormalProductsItemsCount ?? 0) + 1
     }
@@ -44,10 +46,6 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
         router?.navigateToDetail(id)
     }
     
-    func loadNextPage() {
-        
-    }
-    
     func productListScrolled(at index: IndexPath) {
         if let nextPage = formatter?.nextPage,
            index.row > productListItemsCount - 3,
@@ -57,8 +55,12 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
         }
     }
     
-    
+    func getSponsoredAdapter() -> SponsoredCollectionViewAdapter? {
+        router?.getSponsoredAdapter()
+    }
+}
 
+extension ProductsListPresenter: SponsoredListAdapterToPresenterProtocol {
     var sponsoredProductsItemsCount: Int {
         formatter?.getSponsoredProductsItemsCount ?? 0
     }
@@ -74,8 +76,8 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
         }
         router?.navigateToDetail(id)
     }
-    
 }
+
 
 extension ProductsListPresenter: ProductsListInteractorToPresenterProtocol {
     func productsListResponsesRetrived() {

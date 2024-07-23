@@ -42,6 +42,7 @@ extension ProductDetailPresenter: ProductDetailInteractorToPresenterProtocol {
     func productDetailResponseRetrived() {
         guard let response = interactor?.getProductDetailResponse() else { return }
         view?.setTitle(response.title)
+        view?.setRateView(response.rate ?? 0)
         view?.setDescription(response.description)
         view?.setSeller(response.sellerName)
         if let price = response.price,
