@@ -27,7 +27,7 @@ final class ProductsListViewController: UIViewController, StoryboardLoadable {
         let nib2 = UINib(nibName: "SponsoredListCollectionViewCell", bundle: nil)
         productsCollectionView.register(nib2, forCellWithReuseIdentifier: "SponsoredListCollectionViewCell")
         
-        presenter?.viewDidLoad()
+//        presenter?.viewDidLoad()
     }
 }
 

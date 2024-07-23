@@ -48,6 +48,13 @@ extension ProductsListCollectionViewAdapter: UICollectionViewDelegate, UICollect
         return CGSize(width: collectionView.frame.size.width / 2,
                height: 290.0)
     }
+//    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let position = scrollView.contentOffset.y
+//        if position > ()
+//    }
     
-    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        presenter.productListScrolled(at: indexPath)
+    }
 }

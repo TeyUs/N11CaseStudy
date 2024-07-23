@@ -8,9 +8,9 @@
 import Foundation
 
 final class ProductsListInteractor {
-    
     weak var output: ProductsListInteractorToPresenterProtocol?
-    private var productsListResponse: ProductsReponse?
+    var formatter: ProductListFormatterProtocol?
+    
 }
 
 extension ProductsListInteractor: ProductsListInteractorProtocol {
@@ -18,15 +18,11 @@ extension ProductsListInteractor: ProductsListInteractorProtocol {
         Task {
             do {
                 let response: ProductsReponse = try await NetworkManager.shared.get(endpoint: .productList(page: page))
-                self.productsListResponse = response
-                output?.productsListResponseRetrived()
+                formatter?.parseResponse(response)
+                output?.productsListResponsesRetrived()
             } catch {
                 output?.errorOccurred(error: "")
             }
         }
-    }
-    
-    func getProductsListResponse() -> ProductsReponse? {
-        productsListResponse
     }
 }

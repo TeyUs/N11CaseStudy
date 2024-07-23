@@ -118,14 +118,18 @@ class DiscountView: UIView {
             normalPriceLabel.font = UIFont.systemFont(ofSize: size.normalSize)
             discountedPriceLabel.font = UIFont.systemFont(ofSize: size.discountSize)
             discountRatioPrice.font = UIFont.systemFont(ofSize: size.normalSize)
+            
+            
+            discountedPriceLabel.isHidden = false
+            ratioContainerView.isHidden = false
         } else {
             isDiscountExist = false
-            discountedPriceLabel.isHidden = true
+            normalPriceLabel.isHidden = true
             ratioContainerView.isHidden = true
             if normal > 0 {
-                normalPriceLabel.text = "\(normal)".tl
+                discountedPriceLabel.text = "\(normal)".tl
             } else {
-                normalPriceLabel.text = "\(discounted)".tl
+                discountedPriceLabel.text = "\(discounted)".tl
             }
         }
     }

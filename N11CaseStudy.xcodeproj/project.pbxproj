@@ -47,6 +47,7 @@
 		F3A0B80A2C4EBFAE0071BD32 /* ProductsListSponsoredCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3A0B8082C4EBFAE0071BD32 /* ProductsListSponsoredCollectionViewCell.xib */; };
 		F3A0B80D2C4EC2570071BD32 /* DiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B80C2C4EC2570071BD32 /* DiscountView.swift */; };
 		F3A0B80F2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B80E2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift */; };
+		F3A0B8112C4F93E20071BD32 /* ProductListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B8102C4F93E20071BD32 /* ProductListFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		F3A0B8082C4EBFAE0071BD32 /* ProductsListSponsoredCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsListSponsoredCollectionViewCell.xib; sourceTree = "<group>"; };
 		F3A0B80C2C4EC2570071BD32 /* DiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountView.swift; sourceTree = "<group>"; };
 		F3A0B80E2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsoredCollectionViewAdapter.swift; sourceTree = "<group>"; };
+		F3A0B8102C4F93E20071BD32 /* ProductListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				F36DBEA42C4BBB6C002532A7 /* ProductsListRouter.swift */,
 				F36DBEAC2C4BBFCE002532A7 /* ProductsListContract.swift */,
 				F36DBEA62C4BBB7F002532A7 /* ProductsListInteractor.swift */,
+				F3A0B8102C4F93E20071BD32 /* ProductListFormatter.swift */,
 			);
 			path = ProductsList;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				F3A0B8032C4EB7FA0071BD32 /* ProdcutDetailImageSliderCollectionCell.swift in Sources */,
 				F36DBEB02C4BCEE2002532A7 /* NetworkManager.swift in Sources */,
 				F36DBEA72C4BBB7F002532A7 /* ProductsListInteractor.swift in Sources */,
+				F3A0B8112C4F93E20071BD32 /* ProductListFormatter.swift in Sources */,
 				F3A0B80D2C4EC2570071BD32 /* DiscountView.swift in Sources */,
 				F3A0B80F2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift in Sources */,
 				F3A0B7F22C4E6D660071BD32 /* ProductDetailViewController.swift in Sources */,

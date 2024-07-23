@@ -18,6 +18,9 @@ protocol ProductsListPresenterProtocol: AnyObject {
     var productListItemsCount: Int { get }
     func productListItem(at index: IndexPath) -> Product?
     func productListSelectedItem(at index: IndexPath)
+    func loadNextPage()
+    func productListScrolled(at index: IndexPath)
+    
     var sponsoredProductsItemsCount: Int { get }
     func sponsoredProductsItem(at index: IndexPath) -> Product?
     func sponsoredProductsSelectedItem(at index: IndexPath)
@@ -26,12 +29,11 @@ protocol ProductsListPresenterProtocol: AnyObject {
 //presenter'daki interactor
 protocol ProductsListInteractorProtocol: AnyObject {
     func retriveProducts(page: Int)
-    func getProductsListResponse() -> ProductsReponse?
 }
 
 //interactor'daki presenter
 protocol ProductsListInteractorToPresenterProtocol: AnyObject {
-    func productsListResponseRetrived()
+    func productsListResponsesRetrived()
     func errorOccurred(error: String)
 }
 
@@ -40,3 +42,11 @@ protocol ProductsListRouterProtocol: AnyObject {
     func navigateToDetail(_ id: Int)
 }
 
+protocol ProductListFormatterProtocol: AnyObject {
+    var nextPage: Int? { get }
+    func parseResponse(_ response: ProductsReponse)
+    var getNormalProductsItemsCount: Int { get }
+    func getNormalProductsItem(at index: Int) -> Product
+    var getSponsoredProductsItemsCount: Int { get }
+    func getSponsoredProductsItem(at index: Int) -> Product
+}

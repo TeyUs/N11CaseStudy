@@ -11,25 +11,28 @@ final class ProductsListPresenter {
     weak var view: ProductsListViewProtocol?
     var router: ProductsListRouterProtocol?
     var interactor: ProductsListInteractorProtocol?
+    var formatter: ProductListFormatterProtocol?
     
-    var page: Int = 1
+    var isNetworkWorking = false
 }
 
 extension ProductsListPresenter: ProductsListPresenterProtocol {
-    
     func viewDidLoad() {
-        interactor?.retriveProducts(page: page)
+        if let nextPage = formatter?.nextPage, !isNetworkWorking {
+            isNetworkWorking = true
+            interactor?.retriveProducts(page: nextPage)
+        }
     }
     
     var productListItemsCount: Int {
-        (interactor?.getProductsListResponse()?.products?.count ?? 0) + 1
+        (formatter?.getNormalProductsItemsCount ?? 0) + 1
     }
     
     func productListItem(at index: IndexPath) -> Product? {
         if index.row == 0 {
             return nil
         } else {
-            return interactor?.getProductsListResponse()?.products?[index.row - 1]
+            return formatter?.getNormalProductsItem(at: index.row - 1)
         }
     }
     
@@ -40,13 +43,28 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
         }
         router?.navigateToDetail(id)
     }
+    
+    func loadNextPage() {
+        
+    }
+    
+    func productListScrolled(at index: IndexPath) {
+        if let nextPage = formatter?.nextPage,
+           index.row > productListItemsCount - 3,
+           !isNetworkWorking {
+            isNetworkWorking = true
+            interactor?.retriveProducts(page: nextPage)
+        }
+    }
+    
+    
 
     var sponsoredProductsItemsCount: Int {
-        interactor?.getProductsListResponse()?.sponsoredProducts?.count ?? 0
+        formatter?.getSponsoredProductsItemsCount ?? 0
     }
     
     func sponsoredProductsItem(at index: IndexPath) -> Product? {
-        interactor?.getProductsListResponse()?.sponsoredProducts?[index.row]
+        formatter?.getSponsoredProductsItem(at: index.row)
     }
     
     func sponsoredProductsSelectedItem(at index: IndexPath) {
@@ -60,11 +78,13 @@ extension ProductsListPresenter: ProductsListPresenterProtocol {
 }
 
 extension ProductsListPresenter: ProductsListInteractorToPresenterProtocol {
-    func productsListResponseRetrived() {
+    func productsListResponsesRetrived() {
+        isNetworkWorking = false
         view?.reloadView()
     }
     
     func errorOccurred(error: String) {
+        isNetworkWorking = false
         
     }
 }
