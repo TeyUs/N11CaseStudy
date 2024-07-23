@@ -16,7 +16,7 @@ final class ProductDetailViewController: UIViewController, StoryboardLoadable {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var sellerLabel: UILabel!
     @IBOutlet weak var priceView: DiscountView!
-    
+    @IBOutlet weak var pageController: UIPageControl!
     
     var presenter: ProductDetailPresenterProtocol?
     var adapter: ProductDetailCollectionViewAdapter?
@@ -32,14 +32,35 @@ final class ProductDetailViewController: UIViewController, StoryboardLoadable {
         presenter?.viewDidLoad()
     }
     
+    @IBAction func pageControlChanged(_ sender: UIPageControl) {
+        let current = sender.currentPage
+        let indexPath = IndexPath(item: current, section: 0)
+        imageSliderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
 }
 
-
 extension ProductDetailViewController: ProductDetailViewProtocol {
-    func setTitle(_ text: String?) {
+    func reloadImageSlider() {
         DispatchQueue.main.async { [weak self] in
             self?.imageSliderCollectionView.reloadData()
+        }
+    }
+    
+    func setTitle(_ text: String?) {
+        DispatchQueue.main.async { [weak self] in
             self?.nameLabel.text = text
+        }
+    }
+    
+    func setPageControllerNumberOfPages(_ total: Int) {
+        DispatchQueue.main.async { [weak self] in
+            self?.pageController.numberOfPages = total
+        }
+    }
+    
+    func setPageController(_ currentPage: Int) {
+        DispatchQueue.main.async { [weak self] in
+            self?.pageController.currentPage = currentPage
         }
     }
     

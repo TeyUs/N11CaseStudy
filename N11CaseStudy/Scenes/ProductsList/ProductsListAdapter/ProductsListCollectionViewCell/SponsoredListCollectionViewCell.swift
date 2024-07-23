@@ -10,25 +10,39 @@ import UIKit
 class SponsoredListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-//    var adapter: SponsoredCollectionViewAdapter?
+    @IBOutlet weak var pageController: UIPageControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        
-//        collectionView.dataSource = adapter
-//        collectionView.delegate = adapter
-        
         let nib = UINib(nibName: "ProductsListSponsoredCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "ProductsListSponsoredCollectionViewCell")
     }
     
     func configure(adapter: SponsoredCollectionViewAdapter?) {
-//        self.adapter = adapter
-        
-        collectionView.dataSource = adapter
-        collectionView.delegate = adapter
-        collectionView.reloadData()
+        adapter?.pageControllerDelegate = self
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.dataSource = adapter
+            self?.collectionView.delegate = adapter
+            self?.collectionView.reloadData()
+            self?.pageController.numberOfPages = adapter?.pageNumber ?? 0
+        }
     }
+    
+    @IBAction func pageControlTapped(_ sender: UIPageControl) {
+        let current = sender.currentPage
+        let indexPath = IndexPath(item: current, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+}
 
+extension SponsoredListCollectionViewCell: SponsoredPageControllerDelegate {
+    func setPageController(_ currentPage: Int) {
+        DispatchQueue.main.async { [weak self] in
+            self?.pageController.currentPage = currentPage
+        }
+    }
+}
+
+protocol SponsoredPageControllerDelegate {
+    func setPageController(_ currentPage: Int)
 }

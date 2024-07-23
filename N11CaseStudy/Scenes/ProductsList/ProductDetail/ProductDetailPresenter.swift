@@ -35,12 +35,18 @@ extension ProductDetailPresenter: ProductDetailPresenterProtocol {
         }
         return nil
     }
+    
+    func pageControllerChanged(to currentPage: Int) {
+        view?.setPageController(currentPage)
+    }
 }
 
 
 extension ProductDetailPresenter: ProductDetailInteractorToPresenterProtocol {
     func productDetailResponseRetrived() {
         guard let response = interactor?.getProductDetailResponse() else { return }
+        view?.reloadImageSlider()
+        view?.setPageControllerNumberOfPages(imagesItemsCount)
         view?.setTitle(response.title)
         view?.setRateView(response.rate ?? 0)
         view?.setDescription(response.description)

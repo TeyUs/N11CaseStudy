@@ -30,6 +30,10 @@ final class ProductsListViewController: UIViewController, StoryboardLoadable {
         
 //        presenter?.viewDidLoad()
     }
+    
+    func setSponseredPageControl(to currentPage: Int) {
+        productsCollectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
+    }
 }
 
 extension ProductsListViewController: ProductsListViewProtocol {

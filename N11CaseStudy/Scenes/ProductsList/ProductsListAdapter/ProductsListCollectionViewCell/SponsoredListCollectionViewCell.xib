@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="392" height="174"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hT3-E5-fvm">
-                                <rect key="frame" x="0.0" y="25" width="392" height="149"/>
+                                <rect key="frame" x="0.0" y="25" width="392" height="124"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fRz-rt-3sX">
                                     <size key="itemSize" width="128" height="128"/>
@@ -36,12 +36,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4Dh-R1-Qdp">
+                                <rect key="frame" x="138" y="148" width="116" height="26"/>
+                                <color key="pageIndicatorTintColor" red="0.86280345920000001" green="0.86244732140000002" blue="0.87281304599999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="pageControlTapped:" destination="gTV-IL-0wX" eventType="valueChanged" id="ffS-fw-1Yx"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4Dh-R1-Qdp" secondAttribute="bottom" id="2y9-rm-wDb"/>
                             <constraint firstItem="F9D-BI-ymg" firstAttribute="top" secondItem="2sc-fs-G59" secondAttribute="top" id="319-p5-bIw"/>
-                            <constraint firstAttribute="bottom" secondItem="hT3-E5-fvm" secondAttribute="bottom" id="4ap-dM-Wvi"/>
+                            <constraint firstAttribute="bottom" secondItem="hT3-E5-fvm" secondAttribute="bottom" constant="25" id="4ap-dM-Wvi"/>
                             <constraint firstItem="hT3-E5-fvm" firstAttribute="top" secondItem="2sc-fs-G59" secondAttribute="top" constant="25" id="7Dv-wI-nvU"/>
+                            <constraint firstItem="4Dh-R1-Qdp" firstAttribute="centerX" secondItem="2sc-fs-G59" secondAttribute="centerX" id="Wp7-o6-xMe"/>
                             <constraint firstItem="hT3-E5-fvm" firstAttribute="leading" secondItem="2sc-fs-G59" secondAttribute="leading" id="X2s-p8-Pxa"/>
                             <constraint firstAttribute="trailing" secondItem="hT3-E5-fvm" secondAttribute="trailing" id="XMA-dn-M6c"/>
                             <constraint firstItem="F9D-BI-ymg" firstAttribute="leading" secondItem="2sc-fs-G59" secondAttribute="leading" constant="10" id="wEm-qF-H0P"/>
@@ -59,6 +69,7 @@
             <size key="customSize" width="392" height="179"/>
             <connections>
                 <outlet property="collectionView" destination="hT3-E5-fvm" id="WBR-EM-xEv"/>
+                <outlet property="pageController" destination="4Dh-R1-Qdp" id="3cK-wE-hrr"/>
             </connections>
             <point key="canvasLocation" x="225.95419847328245" y="32.74647887323944"/>
         </collectionViewCell>

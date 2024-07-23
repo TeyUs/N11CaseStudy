@@ -34,5 +34,13 @@ extension ProductDetailCollectionViewAdapter: UICollectionViewDelegate, UICollec
                height: collectionView.frame.size.height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        0
+    }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.width
+        let currentPage = Int((scrollView.contentOffset.x + (0.5 * pageWidth)) / pageWidth)
+        presenter.pageControllerChanged(to: currentPage)
+    }
 }

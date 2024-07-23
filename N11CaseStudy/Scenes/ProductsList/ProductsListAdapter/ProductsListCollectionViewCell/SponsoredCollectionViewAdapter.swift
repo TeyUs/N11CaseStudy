@@ -9,9 +9,14 @@ import UIKit
 
 final class SponsoredCollectionViewAdapter: NSObject {
     private let presenter: SponsoredListAdapterToPresenterProtocol
+    var pageControllerDelegate: SponsoredPageControllerDelegate?
     
     init(presenter: SponsoredListAdapterToPresenterProtocol) {
         self.presenter = presenter
+    }
+    
+    var pageNumber: Int {
+        presenter.sponsoredProductsItemsCount
     }
 }
 
@@ -42,5 +47,9 @@ extension SponsoredCollectionViewAdapter: UICollectionViewDelegate, UICollection
         0
     }
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.width
+        let currentPage = Int((scrollView.contentOffset.x + (0.5 * pageWidth)) / pageWidth)
+        pageControllerDelegate?.setPageController(currentPage)
+    }
 }
