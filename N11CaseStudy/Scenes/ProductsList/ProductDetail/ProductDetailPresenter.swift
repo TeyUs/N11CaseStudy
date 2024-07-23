@@ -34,6 +34,7 @@ extension ProductDetailPresenter: ProductDetailAdapterToPresenterProtocol {
         if let imageStr = interactor?.getProductDetailResponse()?.images?[index.row] {
             return URL(string: imageStr)
         }
+        errorOccurred(error: "Images URL Problem")
         return nil
     }
     
@@ -55,11 +56,11 @@ extension ProductDetailPresenter: ProductDetailInteractorToPresenterProtocol {
            let discountedPrice = response.instantDiscountPrice {
             view?.setPrices(normal: Double(price), discounted: Double(discountedPrice))
         } else {
-            errorOccurred(error: "Prices")
+            errorOccurred(error: "Product Prices Error")
         }
     }
     
     func errorOccurred(error: String) {
-        
+        view?.showAllert(message: error, title: "")
     }
 }

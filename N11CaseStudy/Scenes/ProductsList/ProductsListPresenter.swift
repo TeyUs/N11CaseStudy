@@ -40,7 +40,7 @@ extension ProductsListPresenter: ProductsListAdapterToPresenterProtocol {
     
     func productListSelectedItem(at index: IndexPath) {
         guard let id = productListItem(at: index)?.id else {
-            errorOccurred(error: "index id")
+            errorOccurred(error: "productList index id")
             return
         }
         router?.navigateToDetail(id)
@@ -71,7 +71,7 @@ extension ProductsListPresenter: SponsoredListAdapterToPresenterProtocol {
     
     func sponsoredProductsSelectedItem(at index: IndexPath) {
         guard let id = sponsoredProductsItem(at: index)?.id else {
-            errorOccurred(error: "index id")
+            errorOccurred(error: "sponsoredProducts index id")
             return
         }
         router?.navigateToDetail(id)
@@ -87,6 +87,6 @@ extension ProductsListPresenter: ProductsListInteractorToPresenterProtocol {
     
     func errorOccurred(error: String) {
         isNetworkWorking = false
-        
+        view?.showAllert(message: error, title: "")
     }
 }

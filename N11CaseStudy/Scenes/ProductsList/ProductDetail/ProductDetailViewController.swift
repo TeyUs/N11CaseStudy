@@ -40,6 +40,10 @@ final class ProductDetailViewController: UIViewController, StoryboardLoadable {
 }
 
 extension ProductDetailViewController: ProductDetailViewProtocol {
+    func showAllert(message: String, title: String) {
+        makeAlert(message: message, title: title)
+    }
+    
     func reloadImageSlider() {
         DispatchQueue.main.async { [weak self] in
             self?.imageSliderCollectionView.reloadData()

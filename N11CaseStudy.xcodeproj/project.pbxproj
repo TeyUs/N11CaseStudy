@@ -49,6 +49,7 @@
 		F3A0B80F2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B80E2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift */; };
 		F3A0B8112C4F93E20071BD32 /* ProductListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B8102C4F93E20071BD32 /* ProductListFormatter.swift */; };
 		F3A0B8132C4FB5220071BD32 /* UserRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B8122C4FB5220071BD32 /* UserRateView.swift */; };
+		F3A0B8152C4FF89A0071BD32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B8142C4FF89A0071BD32 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		F3A0B80E2C4EF3030071BD32 /* SponsoredCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsoredCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		F3A0B8102C4F93E20071BD32 /* ProductListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListFormatter.swift; sourceTree = "<group>"; };
 		F3A0B8122C4FB5220071BD32 /* UserRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRateView.swift; sourceTree = "<group>"; };
+		F3A0B8142C4FF89A0071BD32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 				F36DBEC12C4D10A1002532A7 /* Color+Ext.swift */,
 				F3A0B7E82C4D1F140071BD32 /* UIStoryboard+Ext.swift */,
 				F3A0B7FD2C4E7EE00071BD32 /* String+Ext.swift */,
+				F3A0B8142C4FF89A0071BD32 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				F36DBE6F2C4BB641002532A7 /* AppDelegate.swift in Sources */,
 				F3A0B7F42C4E6D740071BD32 /* ProductDetailPresenter.swift in Sources */,
 				F3A0B7FA2C4E6D970071BD32 /* ProductDetailRouter.swift in Sources */,
+				F3A0B8152C4FF89A0071BD32 /* UIViewController+Ext.swift in Sources */,
 				F36DBEB92C4BE8E5002532A7 /* ProductsListCollectionViewAdapter.swift in Sources */,
 				F3A0B7E72C4D1E820071BD32 /* StoryboardLoadable.swift in Sources */,
 				F3A0B8132C4FB5220071BD32 /* UserRateView.swift in Sources */,

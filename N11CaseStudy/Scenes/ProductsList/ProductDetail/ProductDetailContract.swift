@@ -8,6 +8,7 @@
 import Foundation
 
 protocol ProductDetailViewProtocol: AnyObject {
+    func showAllert(message: String, title: String)
     func reloadImageSlider()
     func setTitle(_ text: String?)
     func setPageControllerNumberOfPages(_ total: Int)

@@ -37,6 +37,10 @@ final class ProductsListViewController: UIViewController, StoryboardLoadable {
 }
 
 extension ProductsListViewController: ProductsListViewProtocol {
+    func showAllert(message: String, title: String) {
+        makeAlert(message: message, title: title)
+    }
+    
     func reloadView() {
         DispatchQueue.main.async { [weak self] in
             self?.productsCollectionView.reloadData()

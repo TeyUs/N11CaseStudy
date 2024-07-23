@@ -8,6 +8,7 @@
 import Foundation
 
 protocol ProductsListViewProtocol: AnyObject {
+    func showAllert(message: String, title: String)
     func reloadView()
 }
 
