@@ -19,12 +19,13 @@ final class ProductDetailPresenter {
     }
 }
 
-
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
     func viewDidLoad() {
         interactor?.retriveProduct(id: id)
     }
-    
+}
+
+extension ProductDetailPresenter: ProductDetailAdapterToPresenterProtocol {
     var imagesItemsCount: Int {
         interactor?.getProductDetailResponse()?.images?.count ?? 0
     }
@@ -40,7 +41,6 @@ extension ProductDetailPresenter: ProductDetailPresenterProtocol {
         view?.setPageController(currentPage)
     }
 }
-
 
 extension ProductDetailPresenter: ProductDetailInteractorToPresenterProtocol {
     func productDetailResponseRetrived() {

@@ -11,15 +11,10 @@ import Kingfisher
 class ProdcutDetailImageSliderCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var productImage: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     func configure(url: URL) {
         DispatchQueue.main.async { [weak self] in
             self?.productImage.kf.setImage(with: url)
         }
     }
-
 }

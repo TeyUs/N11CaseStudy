@@ -57,7 +57,6 @@ class UserRateView: UIView {
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             containerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1),
-//            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
         
             ratioLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
             ratioLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
@@ -125,7 +124,6 @@ class UserRateView: UIView {
             }
         }
     }
-    
 
     enum UserRateViewTextSize {
         case large

@@ -15,11 +15,6 @@ class ProductsListSponsoredCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceView: DiscountView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func configure(product: Product) {
         titleLabel.text = product.title
         if let imageStr = product.image,

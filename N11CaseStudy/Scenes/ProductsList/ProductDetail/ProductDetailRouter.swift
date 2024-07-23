@@ -35,8 +35,6 @@ final class ProductDetailRouter {
     }
 }
 
-extension ProductDetailRouter: ProductDetailRouterProtocol {
-    
-}
+extension ProductDetailRouter: ProductDetailRouterProtocol {}
 
 

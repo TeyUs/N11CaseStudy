@@ -9,7 +9,6 @@ import Foundation
 
 
 final class ProductListFormatter {
-    
     private var normalProducts: [Product] = []
     private var sponsoredProducts: [Product] = []
     private(set) var nextPage: Int? = 1

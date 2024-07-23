@@ -8,9 +8,9 @@
 import UIKit
 
 final class ProductDetailCollectionViewAdapter: NSObject {
-    private let presenter: ProductDetailPresenterProtocol
+    private let presenter: ProductDetailAdapterToPresenterProtocol
     
-    init(presenter: ProductDetailPresenterProtocol) {
+    init(presenter: ProductDetailAdapterToPresenterProtocol) {
         self.presenter = presenter
     }
 }

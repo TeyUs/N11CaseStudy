@@ -16,10 +16,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var priceView: DiscountView!
     
     var product: Product?
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     func configure(product: Product) {
         nameLabel.text = product.title

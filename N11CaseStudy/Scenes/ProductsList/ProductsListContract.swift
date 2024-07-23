@@ -7,12 +7,10 @@
 
 import Foundation
 
-//presenter'da, view'ı yönetecek
 protocol ProductsListViewProtocol: AnyObject {
     func reloadView()
 }
 
-//view'daki ve adapter'deki presenter
 protocol ProductsListPresenterProtocol: AnyObject {
     func viewDidLoad()
 }
@@ -31,18 +29,15 @@ protocol SponsoredListAdapterToPresenterProtocol: AnyObject {
     func sponsoredProductsSelectedItem(at index: IndexPath)
 }
 
-//presenter'daki interactor
 protocol ProductsListInteractorProtocol: AnyObject {
     func retriveProducts(page: Int)
 }
 
-//interactor'daki presenter
 protocol ProductsListInteractorToPresenterProtocol: AnyObject {
     func productsListResponsesRetrived()
     func errorOccurred(error: String)
 }
 
-//presenter'da
 protocol ProductsListRouterProtocol: AnyObject {
     func navigateToDetail(_ id: Int)
     func getSponsoredAdapter() -> SponsoredCollectionViewAdapter?
