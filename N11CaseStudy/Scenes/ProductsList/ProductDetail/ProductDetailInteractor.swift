@@ -11,17 +11,21 @@ final class ProductDetailInteractor {
     
     weak var output: ProductDetailInteractorToPresenterProtocol?
     private var productDetailResponse: ProductDetailResponse?
+    var networkManager: NetworkServiceProtocol?
 }
 
 extension ProductDetailInteractor: ProductDetailInteractorProtocol {
     func retriveProduct(id: Int) {
         Task {
             do {
-                let response: ProductDetailResponse = try await NetworkManager.shared.get(endpoint: .productDetail(id: id))
+                guard let response: ProductDetailResponse = try await networkManager?.get(endpoint: .productDetail(id: id)) else {
+                    output?.errorOccurred(error: "ProductDetailResponse is nil")
+                    return
+                }
                 self.productDetailResponse = response
                 output?.productDetailResponseRetrived()
             } catch {
-                output?.errorOccurred(error: "")
+                output?.errorOccurred(error: error.localizedDescription)
             }
         }
     }

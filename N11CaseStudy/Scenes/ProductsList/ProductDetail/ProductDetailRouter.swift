@@ -30,6 +30,7 @@ final class ProductDetailRouter {
         router.view = viewController
         
         interactor.output = presenter
+        interactor.networkManager = NetworkManager.shared
         
         return viewController
     }

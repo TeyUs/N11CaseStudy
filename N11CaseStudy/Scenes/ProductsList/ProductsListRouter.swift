@@ -36,6 +36,7 @@ final class ProductsListRouter {
         
         interactor.output = presenter
         interactor.formatter = formatter
+        interactor.networkManager = NetworkManager.shared
         
         return viewController
     }

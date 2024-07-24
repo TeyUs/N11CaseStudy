@@ -10,18 +10,21 @@ import Foundation
 final class ProductsListInteractor {
     weak var output: ProductsListInteractorToPresenterProtocol?
     var formatter: ProductListFormatterProtocol?
-    
+    var networkManager: NetworkServiceProtocol?
 }
 
 extension ProductsListInteractor: ProductsListInteractorProtocol {
     func retriveProducts(page: Int) {
         Task {
             do {
-                let response: ProductsReponse = try await NetworkManager.shared.get(endpoint: .productList(page: page))
+                guard let response: ProductsReponse = try await networkManager?.get(endpoint: .productList(page: page)) else {
+                    output?.errorOccurred(error: "ProductsReponse is nil")
+                    return
+                }
                 formatter?.parseResponse(response)
                 output?.productsListResponsesRetrived()
             } catch {
-                output?.errorOccurred(error: "")
+                output?.errorOccurred(error: error.localizedDescription)
             }
         }
     }
