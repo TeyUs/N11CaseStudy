@@ -40,7 +40,7 @@ extension ProductsListCollectionViewAdapter: UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == 0 {
             return CGSize(width: collectionView.frame.size.width,
-                          height: collectionView.frame.size.height/3.2)
+                          height: collectionView.frame.size.height/3)
         }
         return CGSize(width: collectionView.frame.size.width / 2,
                height: 290.0)

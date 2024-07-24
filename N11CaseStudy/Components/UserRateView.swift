@@ -22,7 +22,7 @@ class UserRateView: UIView {
         temp.axis  = NSLayoutConstraint.Axis.horizontal
         temp.distribution  = UIStackView.Distribution.fillEqually
         temp.alignment = UIStackView.Alignment.center
-        temp.spacing = 0
+        temp.spacing = -2
         temp.backgroundColor = .clear
         return temp
     }()

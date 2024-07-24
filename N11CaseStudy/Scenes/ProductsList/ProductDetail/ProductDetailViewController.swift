@@ -13,7 +13,7 @@ final class ProductDetailViewController: UIViewController, StoryboardLoadable {
     @IBOutlet weak var imageSliderCollectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rateView: UserRateView!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var sellerLabel: UILabel!
     @IBOutlet weak var priceView: DiscountView!
     @IBOutlet weak var pageController: UIPageControl!
@@ -76,7 +76,7 @@ extension ProductDetailViewController: ProductDetailViewProtocol {
     
     func setDescription(_ text: String?) {
         DispatchQueue.main.async { [weak self] in
-            self?.descriptionLabel.text = text
+            self?.descriptionTextView.text = text
         }
     }
     
