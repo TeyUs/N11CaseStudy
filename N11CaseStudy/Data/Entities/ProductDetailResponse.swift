@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ProdcutDetailResponse
-struct ProductDetailResponse: Codable {
+struct ProductDetailResponse: Codable, Equatable {
     let title: String?
     let description: String?
     let images: [String]?

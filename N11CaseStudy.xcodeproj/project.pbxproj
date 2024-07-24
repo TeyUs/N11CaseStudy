@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F358399B2C51A26100518610 /* ProductDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358399A2C51A26100518610 /* ProductDetailInteractorTests.swift */; };
+		F358399D2C51A35800518610 /* MockProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358399C2C51A35800518610 /* MockProductDetailPresenter.swift */; };
+		F358399F2C51A41800518610 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358399E2C51A41800518610 /* MockNetworkService.swift */; };
+		F35839A12C51B88400518610 /* ProductDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35839A02C51B88400518610 /* ProductDetailPresenterTests.swift */; };
+		F35839A32C51B8EE00518610 /* MockProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35839A22C51B8EE00518610 /* MockProductDetailView.swift */; };
+		F35839A52C51BB3400518610 /* MockProductDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35839A42C51BB3400518610 /* MockProductDetailInteractor.swift */; };
 		F36DBE6F2C4BB641002532A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36DBE6E2C4BB641002532A7 /* AppDelegate.swift */; };
 		F36DBE712C4BB641002532A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36DBE702C4BB641002532A7 /* SceneDelegate.swift */; };
 		F36DBE782C4BB644002532A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36DBE772C4BB644002532A7 /* Assets.xcassets */; };
@@ -70,6 +76,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F358399A2C51A26100518610 /* ProductDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInteractorTests.swift; sourceTree = "<group>"; };
+		F358399C2C51A35800518610 /* MockProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductDetailPresenter.swift; sourceTree = "<group>"; };
+		F358399E2C51A41800518610 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		F35839A02C51B88400518610 /* ProductDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenterTests.swift; sourceTree = "<group>"; };
+		F35839A22C51B8EE00518610 /* MockProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductDetailView.swift; sourceTree = "<group>"; };
+		F35839A42C51BB3400518610 /* MockProductDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductDetailInteractor.swift; sourceTree = "<group>"; };
 		F36DBE6B2C4BB641002532A7 /* N11CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = N11CaseStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36DBE6E2C4BB641002532A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36DBE702C4BB641002532A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +156,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F35839952C51A20300518610 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F35839962C51A20C00518610 /* ProductsList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F35839962C51A20C00518610 /* ProductsList */ = {
+			isa = PBXGroup;
+			children = (
+				F35839972C51A21F00518610 /* ProductDetail */,
+			);
+			path = ProductsList;
+			sourceTree = "<group>";
+		};
+		F35839972C51A21F00518610 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F358399A2C51A26100518610 /* ProductDetailInteractorTests.swift */,
+				F358399C2C51A35800518610 /* MockProductDetailPresenter.swift */,
+				F358399E2C51A41800518610 /* MockNetworkService.swift */,
+				F35839A02C51B88400518610 /* ProductDetailPresenterTests.swift */,
+				F35839A22C51B8EE00518610 /* MockProductDetailView.swift */,
+				F35839A42C51BB3400518610 /* MockProductDetailInteractor.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
 		F36DBE622C4BB641002532A7 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +226,7 @@
 		F36DBE842C4BB644002532A7 /* N11CaseStudyTests */ = {
 			isa = PBXGroup;
 			children = (
+				F35839952C51A20300518610 /* Scenes */,
 				F36DBE852C4BB644002532A7 /* N11CaseStudyTests.swift */,
 			);
 			path = N11CaseStudyTests;
@@ -528,7 +570,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F35839A12C51B88400518610 /* ProductDetailPresenterTests.swift in Sources */,
+				F358399F2C51A41800518610 /* MockNetworkService.swift in Sources */,
+				F358399B2C51A26100518610 /* ProductDetailInteractorTests.swift in Sources */,
 				F36DBE862C4BB644002532A7 /* N11CaseStudyTests.swift in Sources */,
+				F358399D2C51A35800518610 /* MockProductDetailPresenter.swift in Sources */,
+				F35839A52C51BB3400518610 /* MockProductDetailInteractor.swift in Sources */,
+				F35839A32C51B8EE00518610 /* MockProductDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

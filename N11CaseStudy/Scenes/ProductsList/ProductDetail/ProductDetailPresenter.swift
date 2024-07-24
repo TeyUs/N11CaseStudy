@@ -45,7 +45,10 @@ extension ProductDetailPresenter: ProductDetailAdapterToPresenterProtocol {
 
 extension ProductDetailPresenter: ProductDetailInteractorToPresenterProtocol {
     func productDetailResponseRetrived() {
-        guard let response = interactor?.getProductDetailResponse() else { return }
+        guard let response = interactor?.getProductDetailResponse() else { 
+            errorOccurred(error: "Product Response is Nil")
+            return
+        }
         view?.reloadImageSlider()
         view?.setPageControllerNumberOfPages(imagesItemsCount)
         view?.setTitle(response.title)
